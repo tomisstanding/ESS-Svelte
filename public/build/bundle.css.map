@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../../components/View2.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n\n\tlet answer = \"\";\n\n\tconst showAnswers = () => {\n\t\tlet answer = document.getElementsByClassName(\"question\");\n\t\tlet answers = document.getElementsByClassName('answer-container')[0];\n\t\tfor(let i of answer) {\n\t\t\ti.addEventListener('click', function() {\n\t\t\t\tanswers.style.display = 'block';\n\t\t\t});\n\t\t}\n\t}\n\n\tfunction closeAnswer() {\n\t\tlet answers = document.getElementsByClassName('answer-container')[0];\n\t\tanswers.style.display = 'none';\n\t};\n\n</script>\n\n<section id=\"section-2\">\n\n  <div>\n    <h3>Checking IDs Exercise</h3>\n    <p>Examine ID to determine whether or not you would sell to the customer. </p>\n    <div>\n      <img src=\"https://i.imgur.com/zE5tOlu.jpg\" width=\"400\" height=\"250\" alt=\"\">\n   \t<div class=\"question\">\n\t\t<ul>\n\t\t\t<li class=\"question\" on:click={showAnswers} on:click={()=> answer = \"INCORRECT\"}>SELL</li>\n\t\t\t<li class=\"question\" on:click={()=> answer = \"CONGRATS!\"}>DON'T SELL</li>\n\t\t</ul>\n\t</div>\n\n\t<div class=\"answer-container\">\n\t\t<strong>{answer}</strong>\n\t\t<p>The correct answer is:</p>\n\t\t<strong>DON'T SELL</strong>\n\t\t<p>This license has some bumps and scratches indicating that it may have been tampered with. It's expired.</p>\n\t\t<button on:click={closeAnswer}>X</button>\n\t</div>\n\n</section>\n\n<style>\n/* OR YOU CAN BLOCK SCOPE CAUSE WHY NOT RIGHT? */\n.answer-container {\n\tdisplay: none;\n}\n.question {\n\tcursor: pointer;\n\ttext-decoration: underline;\n\tcolor: green;\n}\n#section-2 {\n\tbackground-color: #B2D8B2;\n\tpadding: 20px;\n}\n.answer-container p {\n  margin: 5px auto;\n  line-height: 150%;\n  font-size: 12px;\n}\n</style>\n"
+  ],
+  "names": [],
+  "mappings": "AA+CA,iBAAiB,eAAC,CAAC,AAClB,OAAO,CAAE,IAAI,AACd,CAAC,AACD,SAAS,eAAC,CAAC,AACV,MAAM,CAAE,OAAO,CACf,eAAe,CAAE,SAAS,CAC1B,KAAK,CAAE,KAAK,AACb,CAAC,AACD,UAAU,eAAC,CAAC,AACX,gBAAgB,CAAE,OAAO,CACzB,OAAO,CAAE,IAAI,AACd,CAAC,AACD,gCAAiB,CAAC,CAAC,eAAC,CAAC,AACnB,MAAM,CAAE,GAAG,CAAC,IAAI,CAChB,WAAW,CAAE,IAAI,CACjB,SAAS,CAAE,IAAI,AACjB,CAAC"
+}
